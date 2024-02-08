@@ -1,5 +1,4 @@
 import datetime
-from django.http import Http404
 from django.db.models import Q
 from django.shortcuts import render, get_object_or_404
 from blog.models import Post, Category
@@ -11,7 +10,7 @@ def index(request):
     template = 'blog/index.html'
     post_list = Post.objects.all().filter(is_published=True,
                                           pub_date__lte=TIME_NOW,
-                                          category__is_published=True)                                 
+                                          category__is_published=True)
     context = {
         'post_list': post_list[:5],
     }
