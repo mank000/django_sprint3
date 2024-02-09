@@ -1,5 +1,6 @@
-from django.contrib import admin
 from .models import Category, Location, Post
+from django.contrib import admin
+
 
 admin.site.register(Category)
 admin.site.register(Location)
