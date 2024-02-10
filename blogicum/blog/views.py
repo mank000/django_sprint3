@@ -41,7 +41,7 @@ def index(request):
 
 def post_detail(request, post_id: int):
     template = 'blog/detail.html'
-    post = get_info(post_id)
+    post = get_info(post_id=post_id)
     context = {
         'post': post,
     }
@@ -50,7 +50,7 @@ def post_detail(request, post_id: int):
 
 def category_posts(request, category_slug: str):
     template = 'blog/category.html'
-    category_post_list = get_info(category_slug)
+    category_post_list = get_info(category_slug=category_slug)
     context = {
         'category': category_post_list[0],
         'post_list': category_post_list[1],
